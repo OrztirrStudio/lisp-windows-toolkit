@@ -1,0 +1,11 @@
+name: Legacy tests (disabled)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  disabled:
+    if: false
+    runs-on: windows-latest
+    steps:
+      - run: echo "Legacy workflow disabled; use root .github/workflows/ci.yml"

@@ -1,0 +1,39 @@
+# Compiled files
+*.fasl
+*.dx32fsl
+*.dx64fsl
+*.lx32fsl
+*.lx64fsl
+*.x86f
+*.amd64f
+*.pfsl
+*.dfsl
+*.ppcf
+*.nfasl
+*.cfsl
+
+# Editor backup files
+*~
+*.bak
+\#*\#
+.\#*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Lisp-specific
+.sbcl/
+.ccl/
+.ecl/
+.abcl/
+
+# IDE files
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+
+# Test coverage artifacts
+coverage/

@@ -1,0 +1,37 @@
+name: CI (Windows)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: my-lisp-project
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Roswell via Chocolatey
+        run: |
+          choco install roswell -y
+          echo "$env:USERPROFILE\AppData\Local\roswell" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "$env:USERPROFILE\scoop\shims" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: Set up Roswell and SBCL
+        run: |
+          ros setup
+          ros install sbcl
+          ros use sbcl-bin
+      - name: Run tests with coverage
+        run: |
+          ros run --load run-tests.lisp --quit
+      - name: Upload coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: my-lisp-project/coverage
+          if-no-files-found: warn
