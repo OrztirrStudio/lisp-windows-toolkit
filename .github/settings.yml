@@ -28,8 +28,6 @@ branches:
       required_conversation_resolution: true
       required_status_checks:
         strict: true
-        # IMPORTANT: Replace the placeholder below with the exact check context name
-        # after the workflow runs (e.g. "build", "test", or the job name shown in the UI).
         contexts:
-          - "ci.yml" # placeholder; select actual check in the UI if not using the Settings app
+          - "test-windows"
       restrictions: null

@@ -41,3 +41,5 @@ gh api \
 ```
 
 Tip: The check name to require is the job name shown in the Checks tab (e.g., `windows-ci`), not the workflow filename.
+
+Current repo configuration expects the `test-windows` job to pass (see `.github/settings.yml`). If you rename that job in `ci.yml`, update `.github/settings.yml` accordingly.
