@@ -123,6 +123,31 @@ ros run -e "(ql:quickload :lisp-windows-toolkit/tests) (asdf:test-system :lisp-w
 (asdf:test-system :lisp-windows-toolkit/tests)
 ```
 
+## Run locally (Windows PowerShell)
+
+```powershell
+# From your project root
+Set-Location "c:\Dev Projects\LISP\my-lisp-project"
+
+# Optional: prepare PATH for this session
+$env:PATH = "$env:USERPROFILE\scoop\shims;$env:USERPROFILE\AppData\Local\roswell;$env:PATH"
+
+# Smoke test (should print the greeting)
+ros run --load main.lisp --quit
+
+# Run unit tests (writes coverage/coverage.txt on SBCL)
+ros run --load run-tests.lisp --quit
+
+# View coverage summary (if present)
+Get-Content .\coverage\coverage.txt
+```
+
+Or use the one‑click script:
+
+```powershell
+.\start-lisp.ps1 -NoPrompt -Action test
+```
+
 ## Documentation
 
 - **`QUICK-START.md`**: How to use the one-click setup scripts
