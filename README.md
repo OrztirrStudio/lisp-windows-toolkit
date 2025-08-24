@@ -3,6 +3,7 @@
 [![CI (Windows)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml)
 ![LLM Assisted](https://img.shields.io/badge/LLM%20assisted-yes-8A2BE2)
 [![Latest tag](https://img.shields.io/github/v/tag/OrztirrStudio/lisp-windows-toolkit?label=tag&sort=semver)](https://github.com/OrztirrStudio/lisp-windows-toolkit/tags)
+[![Latest release](https://img.shields.io/github/v/release/OrztirrStudio/lisp-windows-toolkit?display_name=tag&sort=semver)](https://github.com/OrztirrStudio/lisp-windows-toolkit/releases/latest)
 
 Get coding in Common Lisp instantly with this automated Windows setup. Includes Roswell, SBCL, and Quicklisp.
 
@@ -40,6 +41,11 @@ If `ros` isn't on PATH yet, you can run the tests via the script:
 ```powershell
 ./start-lisp.ps1 -NoPrompt -Action test
 ```
+
+## Releases
+
+- Latest release: [GitHub Releases](https://github.com/OrztirrStudio/lisp-windows-toolkit/releases/latest)
+- All tags and notes are in `release-notes/` (for example, `release-notes/v0.1.1.md`).
 
 ### Advanced usage (original method)
 
