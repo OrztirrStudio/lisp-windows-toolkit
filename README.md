@@ -148,6 +148,13 @@ Or use the one‑click script:
 .\start-lisp.ps1 -NoPrompt -Action test
 ```
 
+## Troubleshooting (Windows)
+
+- Roswell not found: ensure Scoop shims are in PATH for the session: `$env:PATH = "$env:USERPROFILE\scoop\shims;$env:USERPROFILE\AppData\Local\roswell;$env:PATH"`
+- Execution policy: you can run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
+See `QUICK-START.md` for more troubleshooting tips.
+
 ## Documentation
 
 - **`QUICK-START.md`**: How to use the one-click setup scripts
