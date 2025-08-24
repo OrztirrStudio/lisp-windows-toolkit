@@ -1,0 +1,35 @@
+# Managed via Probot Settings App. Install https://github.com/apps/settings to apply.
+
+repository:
+  name: lisp-windows-toolkit
+  private: false
+  description: "Windows-first Common Lisp starter with Roswell, SBCL, tests, coverage, and CI"
+  topics:
+    - common-lisp
+    - lisp
+    - windows
+    - roswell
+    - sbcl
+    - quicklisp
+    - fiveam
+    - powershell
+    - github-actions
+    - coverage
+    - ci
+    - starter-template
+    - toolkit
+
+branches:
+  - name: main
+    protection:
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      required_conversation_resolution: true
+      required_status_checks:
+        strict: true
+        # IMPORTANT: Replace the placeholder below with the exact check context name
+        # after the workflow runs (e.g. "build", "test", or the job name shown in the UI).
+        contexts:
+          - "ci.yml" # placeholder; select actual check in the UI if not using the Settings app
+      restrictions: null
