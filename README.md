@@ -2,6 +2,7 @@
 
 [![CI (Windows)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml)
 ![LLM Assisted](https://img.shields.io/badge/LLM%20assisted-yes-8A2BE2)
+[![Latest tag](https://img.shields.io/github/v/tag/OrztirrStudio/lisp-windows-toolkit?label=tag&sort=semver)](https://github.com/OrztirrStudio/lisp-windows-toolkit/tags)
 
 Get coding in Common Lisp instantly with this automated Windows setup. Includes Roswell, SBCL, and Quicklisp.
 
