@@ -45,7 +45,7 @@ If `ros` isn't on PATH yet, you can run the tests via the script:
 ## Releases
 
 - Latest release: [GitHub Releases](https://github.com/OrztirrStudio/lisp-windows-toolkit/releases/latest)
-- All tags and notes are in `release-notes/` (for example, `release-notes/v0.1.1.md`).
+- All tags and notes are in `release-notes/` (for example, `release-notes/v0.1.0.md`).
 
 ### Advanced usage (original method)
 

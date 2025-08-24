@@ -19,12 +19,6 @@ Detailed release notes are available in `release-notes/v0.1.0.md`.
 
 [v0.1.0]: https://github.com/OrztirrStudio/lisp-windows-toolkit/releases/tag/v0.1.0
 
-## [v0.1.1] - 2025-08-24
+## v0.1.1 (removed) - 2025-08-24
 
-Automated release publish of the same contents as v0.1.0.
-
-- Added release workflow to auto-publish tags with in-repo notes
-- Added README badges and Releases section
-- Added release notes file `release-notes/v0.1.1.md`
-
-[v0.1.1]: https://github.com/OrztirrStudio/lisp-windows-toolkit/releases/tag/v0.1.1
+Temporary tag used to validate automated release workflow; subsequently removed in favor of v0.1.0 being the canonical release.
