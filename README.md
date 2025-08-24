@@ -1,5 +1,8 @@
 # Lisp Windows Toolkit
 
+[![CI (Windows)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/OrztirrStudio/lisp-windows-toolkit/actions/workflows/ci.yml)
+![LLM Assisted](https://img.shields.io/badge/LLM%20assisted-yes-8A2BE2)
+
 Get coding in Common Lisp instantly with this automated Windows setup. Includes Roswell, SBCL, and Quicklisp.
 
 One-click Common Lisp development environment for Windows.
@@ -126,6 +129,10 @@ ros run -e "(ql:quickload :lisp-windows-toolkit/tests) (asdf:test-system :lisp-w
 - **`BEGINNERS_USER_GUIDE.md`**: Your complete learning guide
 - **`SETUP_PROGRESS_REPORT.md`**: Technical setup details
 
+## LLM assistance
+
+This project includes content produced with LLM assistance to accelerate setup, documentation, and tests.
+
 ## Contributors
 
 ### Creator and Maintainer
@@ -137,3 +144,7 @@ ros run -e "(ql:quickload :lisp-windows-toolkit/tests) (asdf:test-system :lisp-w
 We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 **Want to help?** Fork the repository and submit a pull request, this language needs you!
+
+---
+
+Made with LLM assistance.
