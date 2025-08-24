@@ -15,11 +15,13 @@ jobs:
         working-directory: my-lisp-project
     steps:
       - uses: actions/checkout@v4
-      - name: Install Roswell via Chocolatey
+      - name: Install Scoop and Roswell
         run: |
-          choco install roswell -y
-          echo "$env:USERPROFILE\AppData\Local\roswell" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+          iwr -useb get.scoop.sh | iex
+          scoop install roswell
           echo "$env:USERPROFILE\scoop\shims" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "$env:USERPROFILE\AppData\Local\roswell" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: Set up Roswell and SBCL
         run: |
           ros setup
