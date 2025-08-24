@@ -8,9 +8,20 @@ on:
 
 jobs:
   test-windows:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
+      - name: Cache Roswell and Scoop
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.roswell
+            ~/AppData/Local/roswell
+            ~/scoop/apps/roswell
+            ~/scoop/shims
+          key: ${{ runner.os }}-roswell-scoop-${{ hashFiles('.github/workflows/ci.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-roswell-scoop-
       - name: Install Scoop and Roswell
         run: |
           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -34,4 +45,5 @@ jobs:
         with:
           name: coverage
           path: coverage
+          retention-days: 7
           if-no-files-found: warn
