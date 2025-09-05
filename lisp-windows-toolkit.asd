@@ -3,7 +3,8 @@
   :author "Nicholas Cole Akers"
   :license "MIT"
   :depends-on ()
-  :components ((:file "main")))
+  :components ((:file "main")
+               (:file "cover-support")))
 
 ;; Test system definition (run with: (asdf:test-system :lisp-windows-toolkit/tests))
 (defsystem "lisp-windows-toolkit/tests"
