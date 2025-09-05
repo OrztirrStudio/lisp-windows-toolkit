@@ -75,3 +75,4 @@ For security issues, contact: [INSERT_SECURITY_EMAIL]
 For general questions: Use GitHub Issues or Discussions
 
 **Thank you for helping keep our community secure!** 🔒
+

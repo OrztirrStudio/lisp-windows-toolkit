@@ -1,8 +1,7 @@
 @echo off
-echo Starting Lisp Development Environment...
-echo.
-echo This will open PowerShell and run your Lisp setup script.
-echo.
-pause
-powershell -ExecutionPolicy Bypass -File "%~dp0start-lisp.ps1"
-pause
+setlocal
+cd /d "%~dp0"
+rem Launch REPL directly without interactive pauses
+powershell -NoLogo -ExecutionPolicy Bypass -File "%~dp0start-lisp.ps1" -NoPrompt -Action repl
+endlocal
+

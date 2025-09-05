@@ -32,3 +32,4 @@ Windows users often face friction setting up Common Lisp (PATH, implementations,
 ## Note on LLM assistance
 
 Some documentation, scripts, and tests were authored or refined with AI assistance and then reviewed and edited by the maintainers.
+

@@ -142,7 +142,22 @@ function Invoke-Choice([string]$choice){
             Write-Host "Starting Lisp REPL..." -ForegroundColor Green
             Write-Host "Type (quit) to exit the REPL when you're done." -ForegroundColor Yellow
             Write-Host "==================================================" -ForegroundColor Green
-            ros run
+            $replInit = Join-Path $PSScriptRoot "repl-init.lisp"
+            $replInitContent = @'
+;; Print a clear banner so the user knows input is active
+(format t "~%[REPL] Ready. Try: (+ 1 2) => 3~%")
+;; Ensure a visible prompt on SBCL; safe if not present
+(ignore-errors
+  (setf (symbol-value (intern "*REPL-PROMPT-FUNCTION*" :sb-impl))
+        (lambda (stream) (format stream "CL-USER> "))))
+'@
+            # Write without BOM to avoid SBCL reading a stray symbol at start of file
+            $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+            [System.IO.File]::WriteAllText($replInit, $replInitContent, $utf8NoBom)
+            try { ros use sbcl-bin 2>$null | Out-Null } catch {}
+            # Launch REPL in a separate console to avoid any interactive quirks within PowerShell
+            $cmdArgs = @("/k", "ros run --load `"$replInit`"")
+            Start-Process -FilePath "cmd.exe" -ArgumentList $cmdArgs -WorkingDirectory (Get-Location)
                         return 0
         }
         "2" {
@@ -197,3 +212,4 @@ do {
 Write-Host ""
 Write-Host "Tip: You can run this script anytime with: .\start-lisp.ps1" -ForegroundColor Yellow
 Write-Host "Happy Lisp coding!" -ForegroundColor Green
+
